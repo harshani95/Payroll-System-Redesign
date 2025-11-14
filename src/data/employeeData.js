@@ -1,4 +1,3 @@
-
 const employeeData = [
   {
     "Employee No": "EMP001",
@@ -7,17 +6,17 @@ const employeeData = [
     "First Name": "John",
     "Middle Name": "De",
     "Last Name": "Doe",
-    "NIC": "123456789V",
+    NIC: "123456789V",
     "Mobile No 1": "0771234567",
     "Mobile No 2": "0712345678",
-    "Address": "123 Main Street",
-    "Designation": "Developer",
+    Address: "123 Main Street",
+    Designation: "Developer",
     "Basic Salary": "50000",
     "Daily Salary": "2000",
     "Budget Allowance": "5000",
-    "Incentive": "2000",
+    Incentive: "2000",
     "Special Incentive": "1000",
-    "Service": "2 Years"
+    Service: "2 Years",
   },
   {
     "Employee No": "EMP002",
@@ -26,18 +25,36 @@ const employeeData = [
     "First Name": "Jane",
     "Middle Name": "Brayne",
     "Last Name": "Smith",
-    "NIC": "987654321V",
+    NIC: "987654321V",
     "Mobile No 1": "0779876543",
     "Mobile No 2": "0719876543",
-    "Address": "456 Park Avenue",
-    "Designation": "Tester",
+    Address: "456 Park Avenue",
+    Designation: "Tester",
     "Basic Salary": "45000",
     "Daily Salary": "1800",
     "Budget Allowance": "4000",
-    "Incentive": "1500",
+    Incentive: "1500",
     "Special Incentive": "500",
-    "Service": "3 Years"
-  }
+    Service: "3 Years",
+  },
+  {
+    "Employee No": "EMP003",
+    "EPF No": "EPF1003",
+    "Display Name": "Amy Johnson",
+    "First Name": "Amy",
+    "Middle Name": "Lee",
+    "Last Name": "Johnson",
+    NIC: "567890123V",
+    "Mobile No 1": "0779876543",
+    Address: "789 Oak Lane",
+    Designation: "Manager",
+    "Basic Salary": "60000",
+    "Daily Salary": "2500",
+    "Budget Allowance": "6000",
+    Incentive: "2500",
+    "Special Incentive": "500",
+    Service: "3 Years",
+  },
 ];
 
 export default employeeData;

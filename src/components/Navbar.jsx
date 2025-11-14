@@ -1,30 +1,38 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../context/ThemeContext";
+import { useTheme } from "../context/ThemeContext";
 
 const Navbar = () => {
-  const { darkMode } = useContext(ThemeContext);
+  const { darkMode } = useTheme();
 
   const currentDate = new Date();
-  const options = { weekday: "long", day: "numeric", month: "long", year: "numeric" };
-  const formattedDate = currentDate.toLocaleDateString("en-GB", options).toUpperCase();
+  const options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  };
+  const formattedDate = currentDate
+    .toLocaleDateString("en-GB", options)
+    .toUpperCase();
 
-  // Navbar background depending on theme
-  const navBg = darkMode ? "bg-gray-900 text-white" : "bg-gradient-to-r from-blue-600 to-purple-700 text-white";
+  const navBg = darkMode
+    ? "bg-gray-900 text-white"
+    : "bg-gradient-to-r from-blue-600 to-purple-700 text-white";
   const iconColor = darkMode ? "text-gray-200" : "text-white";
 
   return (
     <nav className={`p-2 m-2 rounded-2xl shadow-md ${navBg}`}>
       <div className="container mx-auto flex justify-between items-center h-10">
-        {/* Date */}
-        <div className={`text-sm font-medium ${darkMode ? "text-gray-200" : "text-white"}`}>
+        <div
+          className={`text-sm font-medium ${
+            darkMode ? "text-gray-200" : "text-white"
+          }`}
+        >
           {formattedDate}
         </div>
 
-        {/* Icons and Profile */}
         <div className="flex items-center space-x-6">
           <div className="flex items-center space-x-4">
-            {/* File Icon */}
-            <button className="relative p-1 rounded-full">
+            <button className="relative p-1 rounded-full cursor-pointer">
               <svg
                 className={`h-6 w-6 ${iconColor}`}
                 fill="none"
@@ -40,7 +48,6 @@ const Navbar = () => {
               </svg>
             </button>
 
-            {/* Notification Icon */}
             <button className="relative p-1 rounded-full cursor-pointer">
               <svg
                 className={`h-6 w-6 ${iconColor}`}
@@ -58,7 +65,6 @@ const Navbar = () => {
               <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500 ring-2 ring-white"></span>
             </button>
 
-            {/* Chat Icon */}
             <button className="relative p-1 rounded-full cursor-pointer">
               <svg
                 className={`h-6 w-6 ${iconColor}`}
@@ -77,7 +83,6 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Profile */}
           <div className="flex items-center space-x-2 relative group cursor-pointer">
             <div className="relative w-9 h-9 bg-yellow-400 rounded-full flex items-center justify-center text-xs font-bold text-gray-800 border-2 border-white">
               <svg
@@ -91,8 +96,20 @@ const Navbar = () => {
             </div>
 
             <div className="flex flex-col text-right">
-              <span className={`text-xs font-semibold ${darkMode ? "text-gray-200" : "text-white"}`}>0771154848</span>
-              <span className={`text-xs ${darkMode ? "text-gray-400" : "text-gray-200"}`}>SUPER_ADMIN</span>
+              <span
+                className={`text-xs font-semibold ${
+                  darkMode ? "text-gray-200" : "text-white"
+                }`}
+              >
+                0771154848
+              </span>
+              <span
+                className={`text-xs ${
+                  darkMode ? "text-gray-400" : "text-gray-200"
+                }`}
+              >
+                SUPER_ADMIN
+              </span>
             </div>
 
             <svg
@@ -102,7 +119,11 @@ const Navbar = () => {
               stroke="currentColor"
               strokeWidth="2"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </div>
         </div>

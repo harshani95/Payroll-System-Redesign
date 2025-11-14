@@ -1,6 +1,3 @@
-import React, {useContext} from "react";
-import { ThemeContext } from "../../context/ThemeContext";
-
 const InputField = ({ label, id, placeholder }) => (
   <div className="flex items-center gap-3 w-full text-sm">
     <label
@@ -26,9 +23,15 @@ const SelectField = ({ label, id, options }) => (
     >
       {label}
     </label>
+
     <select
       id={id}
-      className="flex-1 border border-gray-300 rounded-md p-1.5 focus:ring-1 focus:ring-blue-500 focus:outline-none"
+      className="
+        flex-1 border border-gray-300 rounded-md p-1.5
+        focus:ring-1 focus:ring-blue-500 focus:outline-none
+        text-gray-700 dark:text-white
+        bg-white dark:bg-zinc-700
+      "
     >
       {options.map((option) => (
         <option key={option.value} value={option.value}>
@@ -40,12 +43,15 @@ const SelectField = ({ label, id, options }) => (
 );
 
 const DetailsCard = () => {
-   const { darkMode } = useContext(ThemeContext);
   return (
     <div className="w-full mx-auto mt-6 bg-white rounded-lg shadow-lg p-4 dark:bg-zinc-800">
       <form className="w-full space-y-4 text-sm ">
         <InputField label="Employee No" id="empNo" placeholder="Primary" />
-        <InputField label="Display Name" id="displayName" placeholder="John Doe" />
+        <InputField
+          label="Display Name"
+          id="displayName"
+          placeholder="John Doe"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <SelectField
@@ -61,7 +67,7 @@ const DetailsCard = () => {
             <label className="min-w-[100px] font-medium text-gray-700 text-sm dark:text-white">
               Salary Status
             </label>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 text-gray-700 dark:text-white">
               <label className="flex items-center gap-1.5">
                 <input
                   type="radio"
@@ -88,7 +94,11 @@ const DetailsCard = () => {
           <InputField label="Last Name" id="lastName" placeholder="Doe" />
           <InputField label="NIC" id="nic" placeholder="123456789V" />
           <InputField label="Email" id="email" placeholder="john@example.com" />
-          <InputField label="Qualification" id="qualification" placeholder="BSc IT" />
+          <InputField
+            label="Qualification"
+            id="qualification"
+            placeholder="BSc IT"
+          />
 
           <SelectField
             label="Gender"
