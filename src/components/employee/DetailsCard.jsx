@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const InputField = ({ label, id, placeholder }) => (
   <div className="flex items-center gap-3 w-full text-sm">
     <label
       htmlFor={id}
-      className="min-w-[100px] font-medium text-gray-700 text-sm"
+      className="min-w-[100px] font-medium text-gray-700 text-sm dark:text-white"
     >
       {label}
     </label>
@@ -21,7 +22,7 @@ const SelectField = ({ label, id, options }) => (
   <div className="flex items-center gap-3 w-full text-sm">
     <label
       htmlFor={id}
-      className="min-w-[100px] font-medium text-gray-700 text-sm"
+      className="min-w-[100px] font-medium text-gray-700 text-sm dark:text-white"
     >
       {label}
     </label>
@@ -39,9 +40,10 @@ const SelectField = ({ label, id, options }) => (
 );
 
 const DetailsCard = () => {
+   const { darkMode } = useContext(ThemeContext);
   return (
-    <div className="w-full mx-auto mt-6 bg-white rounded-lg shadow-lg p-4">
-      <form className="w-full space-y-4 text-sm">
+    <div className="w-full mx-auto mt-6 bg-white rounded-lg shadow-lg p-4 dark:bg-zinc-800">
+      <form className="w-full space-y-4 text-sm ">
         <InputField label="Employee No" id="empNo" placeholder="Primary" />
         <InputField label="Display Name" id="displayName" placeholder="John Doe" />
 
@@ -56,7 +58,7 @@ const DetailsCard = () => {
           />
 
           <div className="flex items-center gap-3 w-full text-sm">
-            <label className="min-w-[100px] font-medium text-gray-700 text-sm">
+            <label className="min-w-[100px] font-medium text-gray-700 text-sm dark:text-white">
               Salary Status
             </label>
             <div className="flex items-center gap-4">
@@ -111,7 +113,7 @@ const DetailsCard = () => {
         <div className="flex items-center gap-3 w-full text-sm">
           <label
             htmlFor="contact"
-            className="min-w-[100px] font-medium text-gray-700 text-sm"
+            className="min-w-[100px] font-medium text-gray-700 text-sm dark:text-white"
           >
             Contact No
           </label>

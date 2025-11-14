@@ -1,12 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import DynamicButton from "../DynamicButton";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const InputField = ({ label, id,type, ...rest }) => (
 
   <div className="flex items-center gap-3 w-full text-sm">
     <label
       htmlFor={id}
-      className="min-w-[100px] font-medium text-gray-700 text-sm"
+      className="min-w-[100px] font-medium text-gray-700 text-sm dark:text-white"
     >
       {label}
     </label>
@@ -25,7 +26,7 @@ const SelectField = ({ label, id, options }) => (
   <div className="flex items-center gap-3 w-full text-sm">
     <label
       htmlFor={id}
-      className="min-w-[100px] font-medium text-gray-700 text-sm"
+      className="min-w-[100px] font-medium text-gray-700 text-sm dark:text-white"
     >
       {label}
     </label>
@@ -45,7 +46,7 @@ const SelectField = ({ label, id, options }) => (
 const CheckboxField = ({ label, id, checked = false }) => (
 
     <div className="flex items-center gap-6 text-sm">
-        <label htmlFor={id} className="w-80 text-gray-700 font-medium ">
+        <label htmlFor={id} className="w-80 text-gray-700 font-medium dark:text-white">
         {label}
       </label>
       <input
@@ -59,13 +60,14 @@ const CheckboxField = ({ label, id, checked = false }) => (
 )
 
 const AdditionalDetailsCard = () => {
+   const { darkMode } = useContext(ThemeContext);
     const numberInputProps = {
     type: "number",
     defaultValue: "0.00", 
   };
   return (
-    <div className="w-full mx-auto mt-6 bg-white rounded-lg shadow-lg p-4">
-       <h2 className="text-xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-200">
+    <div className="w-full mx-auto mt-6 bg-white rounded-lg shadow-lg p-4 dark:bg-zinc-800">
+       <h2 className="text-xl font-semibold text-gray-800 mb-4 pb-2 border-b border-gray-200 dark:text-white">
         Additional Details
       </h2>
       <form className="w-full space-y-4 text-sm">

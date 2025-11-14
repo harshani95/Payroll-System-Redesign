@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useContext} from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const DynamicButton = () => {
+     const { darkMode } = useContext(ThemeContext);
   return (
     <>
      <div className="flex items-center gap-3 w-full text-sm border border-gray-400">
